@@ -19,7 +19,7 @@ double Process::CpuUtilization() {
     double totalTime;
 
     for(int i{13}; i < 17; i++){
-        totalTime += std::stod(processStat[i]);
+        totalTime += std::stof(processStat[i]);
     }
 
     double seconds = LinuxParser::UpTime() - std::stod(processStat[21]) / sysconf(_SC_CLK_TCK);
